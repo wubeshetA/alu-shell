@@ -7,5 +7,5 @@
 for file in *; do
     # remove the dash form the file name
     file=${file#*-}
-    echo $file
+    echo "$file"
 done
