@@ -4,11 +4,8 @@
 
 # read the file /etc/passwd using the read command
 #!/usr/bin/bash 
-
-while read line; do
-    # split the line into an array
-    # the delimiter is a colon
-    IFS=':' read -r -a array <<< "$line"
-    # display the array
-    # echo "${array[0]}:${array[2]}:${array[5]}"
-done < /etc/passwd
+i=0;
+while [ $i -le 0 ]; do
+    cut -d : -f 1,3,6 < /etc/passwd
+    ((i++))
+done 
