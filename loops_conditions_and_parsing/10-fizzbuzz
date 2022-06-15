@@ -14,7 +14,7 @@ while  [ $i -le 100 ]; do
 
     # display Bizz when the number is multiple of 5
     elif [ $((i%5)) -eq 0 ]; then
-        echo "Bizz"
+        echo "Buzz"
     else
         echo $i
     fi
