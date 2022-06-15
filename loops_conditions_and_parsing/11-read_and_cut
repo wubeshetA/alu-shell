@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# a scipt that displays the content of the file /etc/passwd
+# the script displays only username, userid, home directory
+
+# read the file /etc/passwd using the read command
+#!/usr/bin/bash 
+
+while read line; do
+    # split the line into an array
+    # the delimiter is a colon
+    IFS=':' read -r -a array <<< "$line"
+    # display the array
+    # echo "${array[0]}:${array[2]}:${array[5]}"
+done < /etc/passwd
