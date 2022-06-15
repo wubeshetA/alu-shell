@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# script that prints 1 to 100
+
+i=1
+while  [ $i -le 100 ]; do
+
+    # display FizzBuzz when the number is multiple of 3&5
+    if [ $((i%3)) -eq 0 ] && [ $((i%5)) -eq 0 ]; then
+        echo "FizzBuzz"
+
+    # display Fizz when the number is multiple of 3
+    elif [ $((i%3)) -eq 0 ]; then
+        echo "Fizz"
+
+    # display Bizz when the number is multiple of 5
+    elif [ $((i%5)) -eq 0 ]; then
+        echo "Bizz"
+    else
+        echo $i
+    fi
+    ((i++))
