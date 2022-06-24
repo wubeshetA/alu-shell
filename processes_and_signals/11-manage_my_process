@@ -3,20 +3,20 @@
 pid_file="/var/run/my_process.pid"
 case "$1" in
 	start)
-		./manage_my_process &
-		echo $$ > "$pid_file"
+		bash ./manage_my_process &&
+		echo "$!" > /var/run/my_process.pid
 		echo "manage_my_process started"
 		;;
 	stop)
-		pkill -f manage_my_process
-		rm "$pid_file"
+		pkill -f ./manage_my_process &&
+		rm /var/run/my_process.pid &&
 		echo "manage_my_process stopped"
 		;;
 	restart)
-		pkill -f manage_my_process
-		rm "$pid_file"
-		./manage_my_process &
-		echo $$ > "$pid_file"
+		pkill -f ./manage_my_process &&
+		rm /var/run/my_process &&
+		bash ./manage_my_process &&
+		echo "$!" > /var/run/my_process.pid &&
 		echo "manage_my_process restarted"
 		;;
 	*)
